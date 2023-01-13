@@ -14,16 +14,16 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>DreamFusion: Text-to-3D using 2D Diffusion</title>
+    <title>RaBit: Parametric Modeling of 3D Biped Cartoon Characters with a Topological-consistent Dataset</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
 
     <meta property="og:site_name" content="DreamFusion: Text-to-3D using 2D Diffusion" />
     <meta property="og:type" content="video.other" />
@@ -40,44 +40,68 @@
     <meta name="twitter:image" content="https://dreamfusion3d.github.io/assets/images/dreamfusion_samples.png" />
     <!-- <meta name="twitter:site" content="" /> -->
 
-    <script src="assets/js/video_comparison.js"></script>
+    <script src="./assets/js/video_comparison.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
     <div class="banner">
+    
+    <!--
       <video class="video lazy"
           poster="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.jpg"
           autoplay loop playsinline muted>
         <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.mp4" type="video/mp4"></source>
-      </video>
+      </video> 
+    -->
+
+    <img src='./assets/images/fig_teaser3.png' width="1000px"/>
+    
     </div>
     <div class="highlight-clean" style="padding-bottom: 10px;">
         <div class="container" style="max-width: 768px;">
-            <h1 class="text-center"><b>DreamFusion</b>: Text-to-3D using 2D Diffusion</h1>
+            <h1 class="text-center"><i>RaBit</i>: Parametric Modeling of 3D Biped Cartoon Characters with a Topological-consistent Dataset</h1>
         </div>
         <div class="container" style="max-width: 768px;">
             <div class="row authors">
+                <!--  template
                 <div class="col-sm-3">
-                    <h5 class="text-center"><a class="text-center" href="https://cs.stanford.edu/~poole/">Ben Poole</a></h5>
-                    <h6 class="text-center">Google Research</h6>
+                    <h5 class="text-center"><a href="https://ajayj.com">Shengcai Cai</a></h5>
+                    <h6 class="text-center">CUHK(SZ) Gap Lab</h6>
+                </div>
+                -->
+                <div class="col-sm-3">
+                    <h5 class="text-center">Zhongjin Luo*</h5>
+                    <h6 class="text-center"><a href="https://gaplab.cuhk.edu.cn/">CUHK(SZ) Gap Lab</a></h6>
                 </div>
                 <div class="col-sm-3">
-                    <h5 class="text-center"><a href="https://ajayj.com">Ajay Jain</a></h5>
-                    <h6 class="text-center">UC Berkeley</h6>
+                    <h5 class="text-center">Shengcai Cai*</h5>
+                    <h6 class="text-center"><a href="https://gaplab.cuhk.edu.cn/">CUHK(SZ) Gap Lab</a></h6>
                 </div>
                 <div class="col-sm-3">
-                    <h5 class="text-center"><a class="text-center" href="https://jonbarron.info/">Jonathan T. Barron</a></h5>
-                    <h6 class="text-center">Google Research</h6>
+                    <h5 class="text-center">Jinguo Dong</h5>
+                    <h6 class="text-center"><a href="https://gaplab.cuhk.edu.cn/">CUHK(SZ) Gap Lab</a></h6>
                 </div>
                 <div class="col-sm-3">
-                    <h5 class="text-center"><a class="text-center" href="https://bmild.github.io/">Ben Mildenhall</a></h5>
-                    <h6 class="text-center">Google Research</h6>
+                    <h5 class="text-center">Ruibo Ming</h5>
+                    <h6 class="text-center">Tsinghua University</h6>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="text-center">Liangdong Qiu</h5>
+                    <h6 class="text-center"><a href="https://gaplab.cuhk.edu.cn/">CUHK(SZ) Gap Lab</a></h6>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="text-center">Xiaohang Zhan</h5>
+                    <h6 class="text-center">Huawei</h6>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="text-center">Xiaoguang Han#</h5>
+                    <h6 class="text-center">CUHK(SZ) Gap Lab</h6>
                 </div>
             </div>    
         </div>
         <div class="buttons" style="margin-bottom: 8px;">
-            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2209.14988">
+            <a class="btn btn-light disabled border border-dark" role="button" aria-disabled="true" href="https://arxiv.org/abs/2209.14988">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
                 </svg>Paper
@@ -88,12 +112,27 @@
                 </svg>
                 Project
             </a>
-            <a class="btn btn-light" role="button" href="/gallery.html">
+            <a class="btn btn-light disabled border border-dark" role="button" aria-disabled="true" href="./gallery.html">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
                     <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
                 </svg>
                 Gallery
             </a>
+            <a class="btn btn-light disabled border border-dark" role="button" aria-disabled="true" href="./gallery.html">
+                <svg style="visibility:hidden;width:0px;height:24px;margin-left:-12px;margin-right:12px" width="0px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Data
+            </a>
+
+            <!-- template
+            <a class="btn btn-light" role="button" aria-disabled="true" href="/gallery.html">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Gallery
+            </a>
+            -->
         </div>
     </div>
     <hr class="divider" />
@@ -103,151 +142,108 @@
                 <h2>Abstract</h2>
                 <p>
                     <!-- <strong> -->
-                        Recent breakthroughs in text-to-image synthesis have been driven by diffusion models trained on billions of image-text pairs. Adapting this approach to 3D synthesis would require large-scale datasets of labeled 3D assets and efficient architectures for denoising 3D data, neither of which currently exist. In this work, we circumvent these limitations by using a pretrained 2D text-to-image diffusion model to perform text-to-3D synthesis. We introduce a loss based on probability density distillation that enables the use of a 2D diffusion model as a prior for optimization of a parametric image generator. Using this loss in a DeepDream-like procedure, we optimize a randomly-initialized 3D model (a Neural Radiance Field, or NeRF) via gradient descent such that its 2D renderings from random angles achieve a low loss. The resulting 3D model of the given text can be viewed from any angle, relit by arbitrary illumination, or composited into any 3D environment. Our approach requires no 3D training data and no modifications to the image diffusion model, demonstrating the effectiveness of pretrained image diffusion models as priors.
+                        Assisting people in efficiently producing visually plausible 3D characters has always been a fundamental research topic in computer vision and computer graphics. Recent learning-based approaches have achieved unprecedented accuracy and efficiency in the area of 3D real human digitization. However, none of the prior works focus on modeling 3D biped cartoon characters, which are also in great demand in gaming and filming. In this paper, we introduce 3DBiCar, the first large-scale dataset of 3D biped cartoon characters, and RaBit, the corresponding parametric model. Our dataset contains 1,500 topologically consistent high-quality 3D textured models which are manually crafted by professional artists. Built upon the data, RaBit is thus designed with a SMPL-like linear blend shape model and a StyleGAN-based neural UV-texture generator, simultaneously expressing the shape, pose, and texture. To demonstrate the practicality of 3DBiCar and RaBit, various applications are conducted, including single-view reconstruction, sketch-based modeling, and 3D cartoon animation. For the single-view reconstruction setting, we find a straightforward global mapping from input images to the output UV-based texture maps tends to lose detailed appearances of some local parts (e.g., nose, ears). Thus, a novel part-sensitive texture reasoner is designed to make all important local areas perceived. Experiments further demonstrate the effectiveness of such a novel design, both qualitatively and quantitatively. We will release both 3DBiCar and RaBit to the research community.
                     <!-- </strong> -->
                 </p>
             </div>
         </div>
     </div>
-    <div class="container" style="max-width: 768px;">
-        <div class="row captioned_videos">
-            <div class="col-md-12">
-                <!-- Large format devices -->
-                <video class="video lazy d-none d-xs-none d-sm-block" autoplay loop playsinline muted poster="https://dreamfusion-cdn.ajayj.com/sept28/wipe_opposite_6x4_smoothstep.jpg">
-                    <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/wipe_opposite_6x4_smoothstep.mp4" type="video/mp4"></source>
-                </video>
-                <!-- Small format devices -->
-                <video class="video lazy d-xs-block d-sm-none" autoplay loop playsinline muted poster="https://dreamfusion-cdn.ajayj.com/sept28/shaded_3x3_smoothstep.jpg">
-                    <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/shaded_3x3_smoothstep.mp4" type="video/mp4"></source>
-                </video>
-                <h6 class="caption">Given a caption, DreamFusion generates relightable 3D objects with high-fidelity appearance, depth, and normals. Objects are represented as a Neural Radiance Field and leverage a pretrained text-to-image diffusion prior such as Imagen.</h6>
-            </div>
-        </div>
-    </div>
+    
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Generate 3D from text yourself!</h2>
-            </div>
-        </div>
-        <div class="row compositional captioned_videos">
-            <div class="col-sm-8 text">
-                <p class="selectable left" id="compositional_tags_depth_0"></p>
-            </div>
-            <div class="col-sm-4 my-auto">
-                <div class="video-compare-container">
-                    <video id="compositionalVideo" class="video" autoplay loop playsinline muted>
-                        <div class="screen" id="compositionalScreen"></div>
-                        <source id="compositionalVideoSrc" src="https://dreamfusion-cdn.ajayj.com/journey_sept28/cropped/full_continuous/a_DSLR_photo_of_a_squirrel___rgbdn_hq_15000.mp4" type="video/mp4">
-                    </video>
-                    <!-- <video onplay="resizeAndPlay(this)" style="height: 0px;" id="compositionalVideo" class="video lazy" autoplay loop playsinline muted>
-                        <source id="compositionalVideoSrc" data-src="https://dreamfusion-cdn.ajayj.com/journey_sept28/full/a_DSLR_photo_of_a_squirrel___rgbdn_hq_15000.mp4" type="video/mp4">
-                    </video> -->
-                    <!-- <canvas height="752" class="videoMerge" id="compositionalVideoMerge" width="1002"></canvas> -->
-                </div>
-                <!-- <h6 class="caption" id="compositionalCaption">a DSLR photo of a squirrel</h6> -->
-            </div>
-        </div>
+        <h2>3DBiCar</h2>
+        <img src='./assets/images/fig_dataset_gallery.png' width="1000px"/>
+        *Each collected reference image is followed by the T-pose model and the posed model, created by professional artists. 3DBiCar contains 1,500 topologically consistent, textured and skinned 3D high-quality models with paired 2D images, which covers 15 species and 4 image styles.
+        <p><a href="./gallery.html">Here shows some 3D models in our Dataset.  </a></p>
+        <br>
+        note:这里指引到dataset 的 gallery        
     </div>
+    
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-sm-8">
-                <h2>Example generated objects</h2>
-                <p>DreamFusion generates objects and scenes from diverse captions. <a href="/gallery.html">Search through hundreds of generated assets in our full gallery.</a></p>
-            </div>
-            <div class="col-sm-4 my-auto">
-                <a href="/gallery.html" class="btn btn-primary btn-lg btn-search"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 600 550">
-                    <path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" d="m280,278a153,153 0 1,0-2,2l170,170m-91-117 110,110-26,26-110-110"/>
-                    </svg>Search assets
-                </a>
-            </div>
-        </div>
-        <div class="row captioned_videos" id="randomVideos">
-            <!-- <div class="col-4">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_teddy_bear_pushing_a_shopping_cart_full_of_fruits_and_vegetables_rgbdn_hq_15000.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
-                </div>
-                <h6 class="caption">A teddy bear pushing a shopping cart full of fruits and vegetables.</h6>
-            </div>
-            <div class="col-4">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_sliced_loaf_of_fresh_bread_rgbdn_hq_15000.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex2Merge" width="1002"></canvas>
-                </div>
-                <h6 class="caption">a sliced loaf of fresh bread.</h6>
-            </div>
-            <div class="col-4">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_zoomed_out_DSLR_photo_of_Sydney_opera_house,_aerial_view_rgbdn_hq_15000.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
-                </div>
-                <h6 class="caption">a zoomed out DSLR photo of Sydney opera house, aerial view.</h6>
-            </div> -->
-        </div>
+        <h2>RaBit</h2>
+        <p>With 3DBiCar, we propose the first parametric model of 3D biped cartoon characters (RaBit), which contains a linear blend model for shapes and a neural generator for textures. RaBit simultaneously parameterizes the shape, pose, and texture of the 3D biped character. </p>
+        
+        <p><font color="#FF0000">split video here?</font></p>
+        <p><font color="#FF0000">display some objs here?</font></p>
+        <video class="video lazy" controls="" muted="" poster="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.jpg">
+                <source data-src="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.mp4" type="video/mp4">
+        </video>
     </div>
+    
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Composing objects into a scene</h2>
-                <!-- <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p> -->
-                <video class="video lazy" autoplay loop playsinline controls muted poster="https://dreamfusion-cdn.ajayj.com/carouselx24_128tall.jpg">
-                    <source src="https://dreamfusion-cdn.ajayj.com/carouselx24_128tall.mp4" type="video/mp4"></source>
-                </video>
-            </div>
+        <div class="col-sm-8">
+            <h2>Single View Rconstuction</h2>          
+        </div>
+        <p>Single-view reconstruction (SVR) is one of the most popular tasks of efficient 3D content generation, and recent work has made noticeable progress on human reconstruction based on parametric model of human characters (e.g., SMPL).</p>
+        <img src='./assets/images/pipeline_svr_00.png' width="1000px"/>
+        *To verify the practicality of our proposed 3DBiCar and RaBit, we present our baseline method <i>BiCarNet</i> for single view reconstruction for bipled cartoon characters
+        <img src='./assets/images/wild_result_00.png' width="1000px"/>
+        * Our BiCarNet is capable of generating vivid 3D cartoon characters with only single-view image input.
+        <p><font color="#FF0000">display impletement video here?</font></p>
+            <video class="video lazy" controls="" muted="" poster="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.jpg">
+                <source data-src="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.mp4" type="video/mp4">
+            </video>
+        <div class="col-sm-8">
+        <p><font color="#FF0000">display some objs here?</font></p>
         </div>
     </div>
-    <hr class="divider" />
-    <div class="container meshes" id="meshContainer" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Mesh exports</h2>
-                <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p>
-            </div>
-        </div>
-    </div>
+
+
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>How does DreamFusion work?</h2>
-                <p>Given a caption, DreamFusion uses a text-to-image generative model called Imagen to optimize a 3D scene. We propose <strong>Score Distillation Sampling (SDS)</strong>, a way to generate samples from a diffusion model by optimizing a loss function. SDS allows us to optimize samples in an arbitrary parameter space, such as a 3D space, as long as we can map back to images differentiably. We use a 3D scene parameterization similar to Neural Radiance Fields, or NeRFs, to define this differentiable mapping. SDS alone produces reasonable scene appearance, but DreamFusion adds additional regularizers and optimization strategies to improve geometry. The resulting trained NeRFs are coherent, with high-quality normals, surface geometry and depth, and are relightable with a Lambertian shading model.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <video class="video lazy" controls muted poster="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.jpg">
-                    <source data-src="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.mp4" type="video/mp4"></source>
-                </video>
-            </div>
-        </div>
+        <h2>More Application</h2>          
+        
+        <h3>&#9670 Sketch Based Modeling</h3>  
+        <img src='./assets/images/sketch_result_00.png' width="1000px"/>
+        *The sketch created by amateur users denotes on the left and generated models on the right.
+        <p><font color="#FF0000">display some objs here！</font></p>      
+        
+        <h3>&#9670 Animation</h3>        
+        <p> <font color="#FF0000">split video here！</font></p>
+        
     </div>
+
+
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
             <div class="col-md-12">
                 <h2>Citation</h2>
                 <code>
-                    @article{poole2022dreamfusion,<br>
-                    &nbsp; author = {Poole, Ben and Jain, Ajay and Barron, Jonathan T. and Mildenhall, Ben},<br>
-                    &nbsp; title  = {DreamFusion: Text-to-3D using 2D Diffusion},<br>
-                    &nbsp; journal = {arXiv},<br>
-                    &nbsp; year   = {2022},<br>
-                }</code>
+                    TBD(RaBit)
+
+                    <br>
+                    <font color="#FF0000">TODO:</font>
+                    <br>
+                    <font color="#FF0000">1.视频是否要外部引入...（当前视频是临时使用的）</font>
+                    <br>
+                    <font color="#FF0000">2.obj的使用暂时还没有打穿</font>
+                </code>
             </div>
         </div>
     </div>
+
+    <!-- template
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Composing objects into a scene</h2>
+                <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p> 
+                <video class="video lazy" autoplay loop playsinline controls muted poster="https://dreamfusion-cdn.ajayj.com/carouselx24_128tall.jpg">
+                    <source src="https://dreamfusion-cdn.ajayj.com/carouselx24_128tall.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+        </div>
+    </div>
+    -->
+
+
+
+
     <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
-    <script src="/assets/js/yall.js"></script>
+    <script src="./assets/js/yall.js"></script>
     <script>
         yall(
             {
@@ -255,7 +251,7 @@
             }
         );
     </script>
-    <script src="/assets/js/scripts.js"></script>
+    <script src="./assets/js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
