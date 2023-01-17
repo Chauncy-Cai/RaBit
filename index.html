@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-sm-3">
                     <h5 class="text-center">Xiaoguang Han#</h5>
-                    <h6 class="text-center">CUHK(SZ) Gap Lab</h6>
+                    <h6 class="text-center"><a href="https://gaplab.cuhk.edu.cn/">CUHK(SZ) Gap Lab</a></h6>
                 </div>
             </div>    
         </div>
@@ -152,11 +152,21 @@
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <h2>3DBiCar</h2>
+        We make the first large-scale dataset of 3D biped cartoon characters, which includes more than 1,500 topologically consistent high-quality 3D textured models which are manually crafted by professional artists. 
+        <video class="video lazy" controls="" muted="">
+            <source data-src="./assets/videos/3DBiCar.mp4" type="video/mp4">
+        </video>
         <img src='./assets/images/fig_dataset_gallery.png' width="1000px"/>
         *Each collected reference image is followed by the T-pose model and the posed model, created by professional artists. 3DBiCar contains 1,500 topologically consistent, textured and skinned 3D high-quality models with paired 2D images, which covers 15 species and 4 image styles.
-        <p><a href="./gallery.html">Here shows some 3D models in our Dataset.  </a></p>
+        <!--<p><a href="./gallery.html">Here shows some 3D models in our Dataset.  </a></p>
         <br>
-        note:这里指引到dataset 的 gallery        
+        note:这里指引到dataset 的 gallery 
+        -->
+        <br>
+        Show some objs: TBD
+        <br>
+        Gallary: TBD
+               
     </div>
     
     <hr class="divider" />
@@ -164,10 +174,8 @@
         <h2>RaBit</h2>
         <p>With 3DBiCar, we propose the first parametric model of 3D biped cartoon characters (RaBit), which contains a linear blend model for shapes and a neural generator for textures. RaBit simultaneously parameterizes the shape, pose, and texture of the 3D biped character. </p>
         
-        <p><font color="#FF0000">split video here?</font></p>
-        <p><font color="#FF0000">display some objs here?</font></p>
-        <video class="video lazy" controls="" muted="" poster="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.jpg">
-                <source data-src="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.mp4" type="video/mp4">
+        <video class="video lazy" controls="" muted="">
+            <source data-src="./assets/videos/RaBit.mp4" type="video/mp4">
         </video>
     </div>
     
@@ -181,12 +189,11 @@
         *To verify the practicality of our proposed 3DBiCar and RaBit, we present our baseline method <i>BiCarNet</i> for single view reconstruction for bipled cartoon characters
         <img src='./assets/images/wild_result_00.png' width="1000px"/>
         * Our BiCarNet is capable of generating vivid 3D cartoon characters with only single-view image input.
-        <p><font color="#FF0000">display impletement video here?</font></p>
-            <video class="video lazy" controls="" muted="" poster="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.jpg">
-                <source data-src="https://dreamfusion-cdn.ajayj.com/dreamfusion_overview.mp4" type="video/mp4">
-            </video>
+        <video class="video lazy" controls="" muted="">
+            <source data-src="./assets/videos/BiCarNet.mp4" type="video/mp4">
+        </video>
         <div class="col-sm-8">
-        <p><font color="#FF0000">display some objs here?</font></p>
+        <!--<p><font color="#FF0000">display some objs here?</font></p>-->
         </div>
     </div>
 
@@ -198,11 +205,14 @@
         <h3>&#9670 Sketch Based Modeling</h3>  
         <img src='./assets/images/sketch_result_00.png' width="1000px"/>
         *The sketch created by amateur users denotes on the left and generated models on the right.
-        <p><font color="#FF0000">display some objs here！</font></p>      
-        
+        <!--<p><font color="#FF0000">display some objs here！</font></p>-->
+        <video class="video lazy" controls="" muted="">
+            <source data-src="./assets/videos/Sketch.mp4" type="video/mp4">
+        </video>
         <h3>&#9670 Animation</h3>        
-        <p> <font color="#FF0000">split video here！</font></p>
-        
+        <video class="video lazy" controls="" muted="">
+            <source data-src="./assets/videos/Animation.mp4" type="video/mp4">
+        </video>
     </div>
 
 
@@ -213,13 +223,6 @@
                 <h2>Citation</h2>
                 <code>
                     TBD(RaBit)
-
-                    <br>
-                    <font color="#FF0000">TODO:</font>
-                    <br>
-                    <font color="#FF0000">1.视频是否要外部引入...（当前视频是临时使用的）</font>
-                    <br>
-                    <font color="#FF0000">2.obj的使用暂时还没有打穿</font>
                 </code>
             </div>
         </div>
@@ -238,6 +241,13 @@
         </div>
     </div>
     -->
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <p>The website template is borrowed from <a  href="https://dreamfusion3d.github.io/">DreamFusion</a></p>
+        </div>
+    </div>
 
 
 
